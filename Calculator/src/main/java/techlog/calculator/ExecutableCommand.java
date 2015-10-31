@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package techlog.calculator;
+package Calc;
 
-/**
- *
- * @author SoRa1
- */
-public class StartUo {
-    
+import java.util.List;
+
+
+public interface ExecutableCommand {
+    public String identifier();
+    public boolean execCommand(List<Float> x);
 }
