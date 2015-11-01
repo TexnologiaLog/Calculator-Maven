@@ -21,6 +21,84 @@ public class Calculator {
     public Calculator(){
         Initializator.initializeCommands();
     }
+
+    public void openCalculator(){
+        boolean flag = true;
+        boolean process = true;
+
+        String inputId = null;
+        do {
+            {
+                x.clear();
+
+                System.out.println("Give the numbers, type ; to chooce function or exit to end the program ");
+                do {
+
+                    String y = sc.next();
+                    if (y.equals(";")) {
+                        flag = false;
+                    } else {
+                        if (isInt(y)) {
+                            x.add(Float.parseFloat(y));
+                        } else if(y.equals("exit")) {
+                            System.out.println("thank you for trying our calculator");
+                            System.exit(0);
+                        }
+
+
+
+
+
+                    }
+                } while (flag );
+
+                flag = true;
+                for (ExecutableCommand vLookUp : execCommands) {
+                    if(!str.contains(vLookUp.identifier())) {
+                        str.add(vLookUp.identifier());
+                    }
+                }
+
+                do {
+                    System.out.println("Give an operator from the following : ");
+                    for (String vLookUp : str) {
+                        System.out.println(vLookUp);
+                    }
+
+                    String y = sc.next();
+                    if (str.contains(y)) {
+                        inputId = y;
+                        flag = false;
+                    }
+                } while (flag);
+
+                flag = false;
+                for (ExecutableCommand vLookUp : execCommands) {
+                    if (vLookUp.identifier().equals(inputId)) {
+                        flag = vLookUp.execCommand(x);
+                    }
+                }
+
+
+
+            }
+        } while (process);
+
+    }
+
+    private boolean isInt(String str){
+        int i = 0;
+        int tempnum;
+
+        while( i < str.length()) {
+            tempnum = str.charAt(i++) - '0';
+            if (tempnum > 9) {
+                return false;
+            }
+        }
+
+        return true;
+    }
     
     
     
