@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Sum implements ExecutableCommand{
     
+     
     public Sum (){
         Calculator.registerCommand(this);
     }
