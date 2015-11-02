@@ -13,17 +13,17 @@ import java.util.Scanner;
 
 public class Calculator {
     Scanner sc = new Scanner(System.in);
-    List<Float> x = new ArrayList<Float>();
-    List<String> str = new ArrayList<String>();
+    List<Float> x = new ArrayList<>();
+    List<String> str = new ArrayList<>();
     
-    private static List<ExecutableCommand> execCommands = new ArrayList<ExecutableCommand>();
+    private static List<ExecutableCommand> execCommands = new ArrayList<>();
     
     public Calculator(){
         Initializator.initializeCommands();
     }
 
     public void openCalculator(){
-        boolean flag = true;
+        boolean flag;
         boolean process = true;
 
         String inputId = null;
