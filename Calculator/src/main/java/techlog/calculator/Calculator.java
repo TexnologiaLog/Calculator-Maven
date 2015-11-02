@@ -13,10 +13,10 @@ import java.util.Scanner;
 
 public class Calculator {
     Scanner sc = new Scanner(System.in);
-    List<Float> x = new ArrayList();
-    List<String> str = new ArrayList();
+    List<Float> x = new ArrayList<Float>();
+    List<String> str = new ArrayList<String>();
     
-    private static List<ExecutableCommand> execCommands = new ArrayList();
+    private static List<ExecutableCommand> execCommands = new ArrayList<ExecutableCommand>();
     
     public Calculator(){
         Initializator.initializeCommands();
@@ -29,6 +29,7 @@ public class Calculator {
         String inputId = null;
         do {
             {
+                flag=true;
                 x.clear();
 
                 System.out.println("Give the numbers, type ; to chooce function or exit to end the program ");
@@ -88,11 +89,11 @@ public class Calculator {
 
     private boolean isInt(String str){
         int i = 0;
-        int tempnum;
+        int z = 0;
 
         while( i < str.length()) {
-            tempnum = str.charAt(i++) - '0';
-            if (tempnum > 9) {
+            z = str.charAt(i++) - '0';
+            if (z > 9) {
                 return false;
             }
         }
