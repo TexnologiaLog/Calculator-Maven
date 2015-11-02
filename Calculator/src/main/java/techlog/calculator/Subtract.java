@@ -8,6 +8,8 @@ package techlog.calculator;
 
 import java.util.List;
 
+import static java.lang.Math.abs;
+
 /**
  *
  * @author thomas
@@ -27,7 +29,8 @@ public class Subtract implements ExecutableCommand{
     public boolean execCommand(List<Float> x) {
         float y=0;
         for (float vLookUp:x) {
-            y = -vLookUp - y;
+
+            y =abs(y) -vLookUp;
         }
         System.out.println(y);
         return false;

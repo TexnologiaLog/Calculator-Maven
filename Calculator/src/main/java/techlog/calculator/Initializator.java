@@ -10,8 +10,10 @@ public class Initializator {
     public static void initializeCommands(){
         Sum sm = new Sum();
         Multiply mp=new Multiply();
-        Sub sb = new Sub();
+
         Factorial fa=new Factorial();
+        Subtract sub =new Subtract();
+
     }
     
 }
